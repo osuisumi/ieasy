@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!-- 配置数据源 -->
+	<bean name="druid_dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+
+	    <property name="filters" value="${filters}" />
+	 
+	    <property name="maxActive" value="${maxActive}" />
+	    <property name="initialSize" value="${initialSize}" />
+	    <property name="maxWait" value="${maxWait}" />
+	    <property name="minIdle" value="${minIdle}" />
+	 
+	    <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}" />
+	    <property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}" />
+	 
+	    <property name="validationQuery" value="${validationQuery}" />
+	    <property name="testWhileIdle" value="${testWhileIdle}" />
+	    <property name="testOnBorrow" value="${testOnBorrow}" />
+	    <property name="testOnReturn" value="${testOnReturn}" />
+	     
+	    <property name="poolPreparedStatements" value="${poolPreparedStatements}" />
+	    <property name="maxPoolPreparedStatementPerConnectionSize" value="${maxPoolPreparedStatementPerConnectionSize}" />
+	</bean>
+	
+	
+	<!-- 配置数据源 
+	<bean name="druid_dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="url" value="jdbc:mysql://localhost:3306/ieasy" />
+		<property name="username" value="root" />
+		<property name="password" value="yhqmcq" />
+		<property name="initialSize" value="0" />
+		<property name="maxActive" value="20" />
+		<property name="minIdle" value="0" />
+		<property name="maxWait" value="60000" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="testWhileIdle" value="true" />
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="1800" />
+		<property name="logAbandoned" value="true" />
+		<property name="filters" value="stat" />
+	</bean>
+	-->
+	
+	<!-- 配置druid监控spring jdbc -->
+	<bean id="druid-stat-interceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor" />
+
+	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
+		<property name="patterns">
+			<list>
+				<value>com.ieasy.*</value>
+			</list>
+		</property>
+	</bean>
+	<aop:config>
+		<aop:advisor advice-ref="druid-stat-interceptor" pointcut-ref="druid-stat-pointcut" />
+	</aop:config>
+
+</beans>

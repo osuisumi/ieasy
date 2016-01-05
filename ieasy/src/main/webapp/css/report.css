@@ -1,0 +1,74 @@
+#report{
+	width:90%;
+}
+#report .report_box {
+	width:850px;
+	height:600px;
+	margin:0 auto;
+	position: relative;
+	display: table;
+}
+
+#report .report_box .report_container1 {
+	width:455px;
+	height:350px;
+	border:1px solid #ddd;
+	position: absolute;
+	left: 10px;
+	top:10px;
+}
+#report .report_box .report_container2 {
+	width:455px;
+	height:350px;
+	border:1px solid #ddd;
+	position: absolute;
+	left: 480px;
+	top:10px;
+}
+#report .report_box .report_container3 {
+	width:455px;
+	height:350px;
+	border:1px solid #ddd;
+	position: absolute;
+	left: 10px;
+	top:420px;
+}
+#report .report_box .report_container4 {
+	width:455px;
+	height:350px;
+	border:1px solid #ddd;
+	position: absolute;
+	left: 480px;
+	top:420px;
+}
+
+#report .report_box .report_container1 .report_text,
+#report .report_box .report_container2 .report_text,
+#report .report_box .report_container3 .report_text,
+#report .report_box .report_container4 .report_text{
+	border:1px solid #ddd;
+	width:100%;
+	height:50px;
+	position: absolute;
+	top:350px;
+	left:-1px;
+}
+
+
+.report_text div{ 
+	padding-top:3px;
+	padding-left:5px;
+	float:left;
+	width:140px;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+

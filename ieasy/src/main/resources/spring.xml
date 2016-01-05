@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task" 
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/task 
+	http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+	
+	<aop:aspectj-autoproxy/>      
+	<task:annotation-driven/>
+	<context:annotation-config />
+	
+	<context:component-scan base-package="com.ieasy">
+		<!-- 不扫描注解为@Controller的类 -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<!-- 引入项目配置文件 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/db.properties</value>
+				<value>classpath:config/conf.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- freemarker 构造初始化 -->
+	<bean id="ftlPath" class="java.lang.String">
+		<constructor-arg value="/ftl" />
+	</bean>
+	<bean id="outPath" class="java.lang.String">
+		<constructor-arg value="/jsp/template_static" />
+	</bean>
+	
+	<!-- spring JavaMail 功能 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${mail.smtp.host}" />
+		<property name="protocol" value="${mail.smtp.protocol}" />
+		<property name="username" value="${mail.username}" />
+		<property name="password" value="${mail.password}" />
+		<property name="defaultEncoding" value="utf-8" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 多线程异步发送邮件 -->
+	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="5" />
+		<property name="maxPoolSize" value="10" />
+		<property name="queueCapacity" value="25" />
+	</bean>
+	
+	<!-- 系统初始化数据 -->
+	<bean id="initService" class="com.ieasy.module.common.init.InitService">
+		<property name="path" value="init/init.xml"/>
+	</bean>
+	
+	
+    <import resource="classpath:config/spring-activemq.xml"/>
+    <import resource="classpath:config/spring-datasource.xml"/>
+    <import resource="classpath:config/spring-hibernate.xml"/>
+    <import resource="classpath:config/spring-mvc.xml"/>
+    <import resource="classpath:config/spring-quartz.xml"/>
+
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+
+	<description>ieasy核心基本标签</description>
+	<display-name>自定义标签库</display-name>
+	<tlib-version>1.0</tlib-version>
+	<short-name>ict</short-name>
+	<uri>/ieasy-core-tags</uri>
+
+	<tag>
+		<description>获取用户的个人信息</description>
+		<name>myinfo</name>
+		<tag-class>com.ieasy.module.system.util.tag.MyInfoTag</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+</taglib>

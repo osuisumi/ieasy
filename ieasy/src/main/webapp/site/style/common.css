@@ -1,0 +1,29 @@
+body,h1,h2,h3,h4,h5,h6,ul,li,form,a{
+	margin:0px;
+	padding:0px;
+}
+ul, ul li {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+img{border:none;}
+a {
+    color: #0088cc;
+    text-decoration: none;
+}
+em, font, i {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    margin: 0;
+    text-rendering: optimizelegibility;
+}
+table {
+	border-collapse: collapse; 
+}

@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<init package="com.ieasy.module.system.entity">
+	
+	<!-- 菜单数据 -->
+	<entity class="MenuEntity" exist="0" parent="menu" method="menuService.init" name="华智内部管理系统" type="T" iconCls="icon-standard-application-view-list" state="open">
+		<entity name="系统管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+			<entity name="系统基础管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+				<entity name="全局参数设置" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/global/global_main_UI.do">
+					<entity name="修改初始化参数" type="O" href="/ieasy/admin/system/global/update.do"/>
+				</entity>
+				<entity name="发布系统公告" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/notice/notice_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/notice/datagrid.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/notice/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/notice/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/notice/update.do"/>
+				</entity>
+				<entity name="系统资源备份" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/backup_res/backup_res_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/backup_res/datagrid.do"/>
+					<entity name="备份" type="O" href="/ieasy/admin/system/backup_res/backup_res_form.do"/>
+					<entity name="恢复" type="O" href="/ieasy/admin/system/backup_res/resume.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/backup_res/delete.do"/>
+				</entity>
+				<entity name="数据字典" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/dict/dict_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/dict/tree.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/dict/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/dict/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/dict/update.do"/>
+				</entity>
+				<entity name="登录日志" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/log/login_log_main_UILL.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/log/datagridLL.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/log/deleteLL.do"/>
+				</entity>
+				<entity name="日志管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/log/log_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/log/datagrid.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/log/delete.do"/>
+				</entity>
+			</entity>
+			<entity name="监控管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+				<entity name="系统运行信息" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/run/running_UI.do"/>
+				<entity name="定时作业管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/schedule/schedule_task_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/schedule/datagrid.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/schedule/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/schedule/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/schedule/update.do"/> 
+				</entity>
+				<entity name="在线用户管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/online/online_user_UI.do"/>
+				<entity name="数据源管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/druid/druid.do"/>
+			</entity>
+			<entity name="权限管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+				<entity name="岗位授权" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/acl/acl_position_UI.do">
+					<entity name="资源列表" type="O" href="/ieasy/admin/system/acl/allMenuTree.do"/>
+					<entity name="授权资源" type="O" href="/ieasy/admin/system/acl/grantPermits.do"/>
+				</entity>
+				<entity name="部门授权" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/acl/acl_dept_UI.do">
+					<entity name="资源列表" type="O" href="/ieasy/admin/system/acl/allMenuTree.do"/>
+					<entity name="授权资源" type="O" href="/ieasy/admin/system/acl/grantPermits.do"/>
+				</entity>
+				<entity name="角色授权" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/acl/acl_role_UI.do">
+					<entity name="资源列表" type="O" href="/ieasy/admin/system/acl/allMenuTree.do"/>
+					<entity name="授权资源" type="O" href="/ieasy/admin/system/acl/grantPermits.do"/>
+				</entity>
+				<entity name="用户授权" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/acl/acl_user_UI.do">
+					<entity name="资源列表" type="O" href="/ieasy/admin/system/acl/allMenuTree.do"/>
+					<entity name="授权资源" type="O" href="/ieasy/admin/system/acl/grantPermits.do"/>
+				</entity>
+				<entity name="菜单管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/menu/menu_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/menu/tree.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/menu/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/menu/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/menu/update.do"/>
+					<entity name="显示或隐藏" type="O" href="/ieasy/admin/system/menu/isShow_hide.do"/>
+				</entity>
+				<entity name="角色管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/role/role_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/role/datagrid.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/role/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/role/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/role/update.do"/>
+				</entity>
+				<entity name="用户管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/user/user_main_UI.do">
+					<entity name="分配账号" type="O" href="/ieasy/admin/system/user/user_account.do"/>
+					<entity name="锁定账号" type="O" href="/ieasy/admin/system/user/user_lock_account.do"/>
+					<entity name="清空密码" type="O" href="/ieasy/admin/system/user/batchClearPwd.do"/>
+					<entity name="重设密码" type="O" href="/ieasy/admin/system/user/user_reset_pwd.do"/>
+					<entity name="批量添加角色" type="O" href="/ieasy/admin/system/user/user_role.do"/>
+					<entity name="导入Excel数据" type="O" href="/ieasy/admin/system/user/import_user_data.do"/>
+					<entity name="导出Excel数据" type="O" href="/ieasy/admin/system/user/exportUserData.do"/>
+					<entity name="查询" type="O" href="/ieasy/admin/system/user/datagrid.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/user/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/user/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/user/update.do"/>
+				</entity>
+			</entity>
+			<entity name="组织机构管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+				<entity name="机构/部门信息" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/org/org_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/org/tree.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/org/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/org/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/org/update.do"/>
+				</entity>
+				<entity name="岗位管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/position/position_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/position/tree.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/position/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/position/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/position/update.do"/>
+				</entity>
+				<entity name="人员管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/person/person_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/person/datagrid.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/person/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/person/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/person/update.do"/>
+					<entity name="批量离职" type="O" href="/ieasy/admin/system/person/person_batch_dimission.do"/>
+					<entity name="批量注销" type="O" href="/ieasy/admin/system/person/batchOrgLogout.do"/>
+					<entity name="批量设置部门" type="O" href="/ieasy/admin/system/person/person_batch_org.do"/>
+					<entity name="批量设置岗位" type="O" href="/ieasy/admin/system/person/person_batch_position.do"/>
+					<entity name="导入Excel数据" type="O" href="/ieasy/admin/system/person/person_import_excel_data.do"/>
+					<entity name="导出Excel数据" type="O" href="/ieasy/admin/system/person/exportPersonExcelData.do"/>
+				</entity>
+			</entity>
+		</entity>
+		
+		<entity name="人力资源" type="M" iconCls="icon-standard-application-view-list" state="open" href="" >
+			<entity name="基础设置" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="绩效考核" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="酬薪管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="招聘管理" type="M" iconCls="icon-standard-application-view-list" state="closed" href="">
+				<entity name="人才分析" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+				<entity name="招聘录用" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+				<entity name="人才库" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+				<entity name="招聘计划审批" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+				<entity name="招聘计划" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+				<entity name="招聘需求" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			</entity>
+			<entity name="在线考试" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="考勤管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="培训管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="人事管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+				<entity name="机构/部门信息" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/org/org_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/org/tree.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/org/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/org/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/org/update.do"/>
+				</entity>
+				<entity name="岗位管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/position/position_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/position/tree.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/position/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/position/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/position/update.do"/>
+				</entity>
+				<entity name="人事档案" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/system/person/person_main_UI.do">
+					<entity name="查询" type="O" href="/ieasy/admin/system/person/datagrid.do"/>
+					<entity name="添加" type="O" href="/ieasy/admin/system/person/add.do"/>
+					<entity name="删除" type="O" href="/ieasy/admin/system/person/delete.do"/>
+					<entity name="编辑" type="O" href="/ieasy/admin/system/person/update.do"/>
+					<entity name="批量离职" type="O" href="/ieasy/admin/system/person/person_batch_dimission.do"/>
+					<entity name="批量注销" type="O" href="/ieasy/admin/system/person/batchOrgLogout.do"/>
+					<entity name="批量设置部门" type="O" href="/ieasy/admin/system/person/person_batch_org.do"/>
+					<entity name="批量设置岗位" type="O" href="/ieasy/admin/system/person/person_batch_position.do"/>
+					<entity name="导入Excel数据" type="O" href="/ieasy/admin/system/person/person_import_excel_data.do"/>
+					<entity name="导出Excel数据" type="O" href="/ieasy/admin/system/person/exportPersonExcelData.do"/>
+				</entity>
+			</entity>
+		</entity>
+		<entity name="图书管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+		<entity name="智能门户" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+		<entity name="工作流" type="M" iconCls="icon-standard-application-view-list" state="closed" href="">
+			<entity name="工作查询" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="我的工作" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="新建工作" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+		</entity>
+		<entity name="行政办公" type="M" iconCls="icon-standard-application-view-list" state="closed" href="" >
+			<entity name="图书管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="会议申请与安排" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="车辆申请与安排" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+				<entity name="车辆使用查询" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+				<entity name="车辆使用申请" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+				<entity name="车辆GPS跟踪" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			</entity>
+			<entity name="组织机构信息" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="投票管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="新闻管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="公共通知审批" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="公共通知管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+		</entity>
+		<entity name="档案管理" type="M" iconCls="icon-standard-application-view-list" state="closed" href="" >
+			<entity name="档案统计" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+				<entity name="案卷统计" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+				<entity name="借阅统计" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			</entity>
+			<entity name="档案销毁" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="文件管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="案卷管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="卷库管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+		</entity>
+		<entity name="项目管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="" >
+			<entity name="稼动率管理" type="M" iconCls="icon-standard-application-view-list" state="open" href="" >
+				<entity name="我的稼动率" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/oa/jdl/my_jdl_UI.do">
+					<entity name="我的部门稼动率按钮" type="O" href="my_dept_jdl"/>
+				</entity>
+				<entity name="稼动率中心" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/oa/jdl/jdl_center_main_UI.do">
+					<entity name="稼动率中心查询" type="O" href="/ieasy/admin/oa/jdl/jdl_center.do"/>
+					<entity name="生产部门稼动率按钮" type="O" href="produce_dept_jdl"/>
+					<entity name="多部门汇总页面按钮" type="O" href="get_more_dept_report"/>
+				</entity>
+			</entity>
+			
+			<entity name="人员查询" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/oa/project/by_project_view_person.do"/>
+			<entity name="项目审批" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/oa/project/my_approve_UI.do" />
+			<entity name="我的项目" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/oa/project/my_project_UI.do" >
+				<entity name="部门项目" type="O" href="project_by_dept"/>
+				<entity name="我是PM" type="O" href="project_by_pm"/>
+				<entity name="开发人员变更邮件发送" type="O" href="byDevSendMail"/>
+			</entity>
+			<entity name="项目中心" type="M" iconCls="icon-standard-application-view-list" state="open" href="/ieasy/admin/oa/project/project_center_main_UI.do">
+				<entity name="新建项目页面" type="O" href="/ieasy/admin/oa/project/project_add_page.do"/>
+				<entity name="创建项目" type="O" href="/ieasy/admin/oa/project/add.do"/> 
+				<entity name="项目查询" type="O" href="/ieasy/admin/oa/project/findProjectByStatusList.do"/>
+				<entity name="项目详细查看" type="O" href="/ieasy/admin/oa/project/project_detail_view.do"/>
+				
+				<entity name="项目挂起按钮" type="O" href="/ieasy/admin/oa/project/by_Project_Sleep.do"/>
+				<entity name="项目激活按钮" type="O" href="/ieasy/admin/oa/project/by_Project_Activated.do"/>
+				<entity name="项目办结按钮" type="O" href="/ieasy/admin/oa/project/by_Project_Finish.do"/>
+				<entity name="项目销毁按钮" type="O" href="/ieasy/admin/oa/project/by_Project_delete.do"/>
+				<entity name="项目修改按钮" type="O" href="/ieasy/admin/oa/project/by_Project_edit_page.do"/>
+				<entity name="项目状态转换按钮" type="O" href="/ieasy/admin/oa/project/by_Project_changeStatus.do"/>
+				
+				<entity name="刷新项目定时器" type="O" href="/ieasy/admin/oa/project/refProjectTimer.do"/>
+				
+				<entity name="可编辑（开发人员）" type="O" href="enable_kfry"/>
+				<entity name="可编辑（干系人）" type="O" href="enable_gxr"/>
+				<entity name="可编辑（基本信息）" type="O" href="enable_basic"/>
+				
+				<entity name="开发人员变更邮件发送" type="O" href="byDevSendMail"/>
+			</entity>
+		</entity>
+		<entity name="个人事务" type="M" iconCls="icon-standard-application-view-list" state="open" href="">
+			<entity name="控制面板" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="公告通知" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="工作日志" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="个人考勤" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="日程安排" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="消息管理" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="电子邮件" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="投票" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+			<entity name="新闻" type="M" iconCls="icon-standard-application-view-list" state="open" href=""/>
+		</entity>
+	</entity>
+	
+	<!-- 系统全局参数 -->
+	<entity class="GlobalEntity" exist="0" parent="" method="globalService.init" 
+		id="SYSTEM_GLOBAL" 
+		pass_length1="3" 
+		pass_length2="6" 
+		retry_ban="1" 
+		retry_times="3" 
+		ban_time="10" 
+		retrieve_mail_pwd="1" 
+		only_user_login="1" 
+		createName="系统初始化" 
+		/>
+		
+	
+	<!-- 机构/部门 -->
+	<entity class="OrgEntity" exist="0" parent="org" method="orgService.init" name="广东华智科技有限公司" type="O" sn="GDHZ" iconCls="icon-standard-application-view-list" state="open">
+		<entity name="日本支社" type="D" sn="RBZS" iconCls="icon-standard-application-view-list" state="open" />
+		<entity name="总裁办" type="D" sn="ZCB" iconCls="icon-standard-application-view-list" state="open" />
+		<entity name="品质保证部" type="D" sn="PZB" iconCls="icon-standard-application-view-list" state="open" />
+		<entity name="系统集成部" type="D" sn="XTJCB" iconCls="icon-standard-application-view-list" state="open" />
+		<entity name="项目管理部" type="D" sn="XMGLB" iconCls="icon-standard-application-view-list" state="open" />
+		
+		<entity name="北京支社" type="O" sn="BJZS" iconCls="icon-standard-application-view-list" state="open">
+			<entity name="北京开发部" type="D" sn="BJKFB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="北京市场部" type="D" sn="BJSCB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="北京管理部" type="D" sn="BJGLB" iconCls="icon-standard-application-view-list" state="open"/>
+		</entity>
+		<entity name="苏州支社" type="O" sn="SZZS" iconCls="icon-standard-application-view-list" state="open">
+			<entity name="苏州综合管理部" type="D" sn="SZZHGLB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="苏州品质管理部" type="D" sn="SZPZGLB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="苏州系统集成部" type="D" sn="SZXTJCB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="苏州开发部" type="D" sn="SZKFB" iconCls="icon-standard-application-view-list" state="open"/>
+		</entity>
+		<entity name="综合管理本部" type="D" sn="ZHGLB" iconCls="icon-standard-application-view-list" state="open">
+			<entity name="人力资源部" type="D" sn="RLZYB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="总务部" type="D" sn="ZWB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="采购部" type="D" sn="CGB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="财务部" type="D" sn="CWB" iconCls="icon-standard-application-view-list" state="open"/>
+		</entity>
+		<entity name="第一开发本部" type="D" sn="DYKFBB" iconCls="icon-standard-application-view-list" state="open">
+			<entity name="第一开发本部开发一部" type="D" sn="DYKFBBKFYB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="第一开发本部开发二部" type="D" sn="DYKFBBKFEB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="第一开发本部开发三部" type="D" sn="DYKFBBKFSB" iconCls="icon-standard-application-view-list" state="open"/>
+		</entity>
+		<entity name="第二开发本部" type="D" sn="DEKFBB" iconCls="icon-standard-application-view-list" state="open">
+			<entity name="第二开发本部开发一部" type="D" sn="DEKFBBKFYB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="第二开发本部开发二部" type="D" sn="DEKFBBKFEB" iconCls="icon-standard-application-view-list" state="open"/>
+			<entity name="第二开发本部开发三部" type="D" sn="DEKFBBKFSB" iconCls="icon-standard-application-view-list" state="open"/>
+		</entity>
+	</entity>
+	
+	
+	<!-- 岗位数据 -->
+	<entity class="PositionEntity" exist="0" parent="position" method="positionService.init" name="总经理" sn="ZJL">
+		<entity name="高级系统集成工程师" sn=""/>
+		<entity name="副技术总监" sn=""/>
+		<entity name="开发部副经理" sn=""/>
+		<entity name="质量保证员" sn=""/>
+		<entity name="开发部主管" sn=""/>
+		<entity name="后勤" sn=""/>
+		<entity name="招聘专员" sn=""/>
+		<entity name="采购部专员" sn=""/>
+		<entity name="开发事业部总监" sn=""/>
+		<entity name="劳动关系专员" sn=""/>
+		<entity name="开发部经理" sn=""/>
+		<entity name="质量保证员助理" sn=""/>
+		<entity name="前台" sn=""/>
+		<entity name="综合管理部经理" sn=""/>
+		<entity name="品质部经理" sn=""/>
+		<entity name="主管系统工程师" sn=""/>
+		<entity name="主管系统集成工程师" sn=""/>
+		<entity name="项目管理专员" sn=""/>
+		<entity name="系统支持工程师" sn=""/>
+		<entity name="分公司总经理" sn=""/>
+		<entity name="技术总监" sn=""/>
+		<entity name="主管质量保证员" sn=""/>
+		<entity name="高级系统工程师" sn=""/>
+		<entity name="开发本部总经理" sn=""/>
+		<entity name="项目经理" sn=""/>
+		<entity name="系统工程师" sn=""/>
+		<entity name="综合管理部本部总经理" sn=""/>
+		<entity name="高级质量保证员" sn=""/>
+		<entity name="出纳" sn=""/>
+		<entity name="系统集成部主管" sn=""/>
+		<entity name="高级程序员" sn=""/>
+		<entity name="营业" sn=""/>
+		<entity name="系统集成部部门助理" sn=""/>
+		<entity name="会计" sn=""/>
+		<entity name="销售" sn=""/>
+		<entity name="市场助理" sn=""/>
+		<entity name="财务部主管" sn=""/>
+		<entity name="程序员" sn=""/>
+		<entity name="系统集成部经理" sn=""/>
+		<entity name="薪酬福利专员" sn=""/>
+		<entity name="项目申报专员" sn=""/>
+		<entity name="项目管理部经理" sn=""/>
+		<entity name="行政助理" sn=""/>
+		<entity name="成本核算专员" sn=""/>
+		<entity name="公司总裁" sn=""/>
+		<entity name="副总裁" sn=""/>
+		<entity name="系统集成工程师" sn=""/>
+		<entity name="中级质量保证员" sn=""/>
+	</entity>
+
+	
+	<!-- 数据字典 -->
+	<entity class="DictEntity" exist="0" parent="dict" method="dictService.init" dictName="人力资源" type="SZX">
+		<entity dictName="员工状态" type="LX" dictCode="YGZT">
+			<entity dictName="退休" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="离职" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="在职" type="LB" dictIndex="3" selected="true"/>
+		</entity>
+		<entity dictName="员工类型" type="LX" dictCode="YGLX">
+			<entity dictName="试用期员工" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="临时工" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="合同工" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="正式工" type="LB" dictIndex="4" selected="true"/>
+		</entity>
+		<entity dictName="证件类型" type="LX" dictCode="ZJLX">
+			<entity dictName="身份证" type="LB" dictIndex="1" selected="true"/>
+			<entity dictName="技师证" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="毕业证" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="军官证" type="LB" dictIndex="4" selected="false"/>
+			<entity dictName="驾驶证" type="LB" dictIndex="5" selected="false"/>
+			<entity dictName="护照" type="LB" dictIndex="6" selected="false"/>
+		</entity>
+		<entity dictName="性别" type="LX" dictCode="XB">
+			<entity dictName="女" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="男" type="LB" dictIndex="2" selected="true"/>
+		</entity>
+		<entity dictName="婚姻状况" type="LX" dictCode="HYZK">
+			<entity dictName="离异" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="未婚" type="LB" dictIndex="2" selected="true"/>
+			<entity dictName="已婚" type="LB" dictIndex="3" selected="false"/>
+		</entity>
+		<entity dictName="健康状况" type="LX" dictCode="JKZK">
+			<entity dictName="良好" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="一般" type="LB" dictIndex="2" selected="true"/>
+			<entity dictName="较差" type="LB" dictIndex="3" selected="false"/>
+		</entity>
+		<entity dictName="政治面貌" type="LX" dictCode="ZZMM">
+			<entity dictName="其它党派" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="共产党员" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="团员" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="群众" type="LB" dictIndex="4" selected="true"/>
+		</entity>
+		<entity dictName="户口性质" type="LX" dictCode="HKXZ">
+			<entity dictName="农业" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="非农" type="LB" dictIndex="2" selected="true"/>
+		</entity>
+		<entity dictName="名族" type="LX" dictCode="MZ">
+			<entity dictName="汉族" type="LB" dictIndex="1" selected="true"/>
+			<entity dictName="藏族" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="苗族" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="维族" type="LB" dictIndex="2" selected="false"/>
+		</entity>
+		<entity dictName="职称" type="LX" dictCode="ZC">
+			<entity dictName="高级讲师" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="讲师" type="LB" dictIndex="2" selected="true"/>
+			<entity dictName="培训师" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="经济师" type="LB" dictIndex="4" selected="false"/>
+			<entity dictName="人力资源师" type="LB" dictIndex="5" selected="false"/>
+			<entity dictName="会计师" type="LB" dictIndex="6" selected="false"/>
+			<entity dictName="高级工程师" type="LB" dictIndex="7" selected="false"/>
+			<entity dictName="工程师" type="LB" dictIndex="8" selected="false"/>
+		</entity>
+		<entity dictName="学历" type="LX" dictCode="XL">
+			<entity dictName="博士后" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="博士" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="硕士" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="本科" type="LB" dictIndex="4" selected="true"/>
+			<entity dictName="大专" type="LB" dictIndex="5" selected="false"/>
+			<entity dictName="高中" type="LB" dictIndex="6" selected="false"/>
+			<entity dictName="初中" type="LB" dictIndex="7" selected="false"/>
+			<entity dictName="小学" type="LB" dictIndex="8" selected="false"/>
+		</entity>
+		<entity dictName="职称等级" type="LX" dictCode="ZCDJ">
+			<entity dictName="普通职员" type="LB" dictIndex="1" selected="true"/>
+			<entity dictName="高级职员" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="核心员工" type="LB" dictIndex="3" selected="false"/>
+		</entity>
+		<entity dictName="稼动率-到部门类型" type="LX" dictCode="JDL_DBMTYPE">
+			<entity dictName="在职" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="转入" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="新增" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="试用" type="LB" dictIndex="4" selected="false"/>
+			<entity dictName="停薪留职返回" type="LB" dictIndex="5" selected="false"/>
+			<entity dictName="返聘" type="LB" dictIndex="6" selected="false"/>
+		</entity>
+		<entity dictName="稼动率-离部门类型" type="LX" dictCode="JDL_LBMTYPE">
+			<entity dictName="转出-到开发部" type="LB" dictIndex="1" selected="false"/>
+			<entity dictName="转出-到非开发部" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="离职" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="停薪留职" type="LB" dictIndex="4" selected="false"/>
+		</entity>
+	</entity>
+	<entity class="DictEntity" exist="0" parent="dict" method="dictService.init" dictName="项目管理" type="XMGL">
+		<entity dictName="开发人员角色" type="LX" dictCode="KFRYJS">
+			<entity dictName="BSE" type="LB" dictIndex="8" selected="false"/>
+			<entity dictName="PM" type="LB" dictIndex="7" selected="false"/>
+			<entity dictName="PL" type="LB" dictIndex="6" selected="false"/>
+			<entity dictName="SE" type="LB" dictIndex="5" selected="false"/>
+			<entity dictName="PG" type="LB" dictIndex="4" selected="false"/>
+			<entity dictName="初级PG1" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="初级PG2" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="初级PG3" type="LB" dictIndex="1" selected="false"/>
+		</entity>
+		<entity dictName="跟进级别" type="LX" dictCode="XM_GJJB">
+			<entity dictName="D" type="LB" dictIndex="4" selected="false"/>
+			<entity dictName="C" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="B" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="A" type="LB" dictIndex="1" selected="false"/>
+		</entity>
+		<entity dictName="结算状态" type="LX" dictCode="XM_JSZT">
+			<entity dictName="未结算" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="已结算" type="LB" dictIndex="1" selected="false"/>
+		</entity>
+		<entity dictName="结项状态" type="LX" dictCode="XM_JXZT">
+			<entity dictName="未结项" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="已结项" type="LB" dictIndex="1" selected="false"/>
+		</entity>
+		<entity dictName="受注状态" type="LX" dictCode="XM_SZZT">
+			<entity dictName="未受注" type="LB" dictIndex="21" selected="false"/>
+			<entity dictName="已受注" type="LB" dictIndex="1" selected="false"/>
+		</entity>
+		<entity dictName="项目合同评审状态" type="LX" dictCode="XM_PSZT">
+			<entity dictName="已评审" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="未评审" type="LB" dictIndex="1" selected="false"/>
+		</entity>
+		<entity dictName="类型区分" type="LX" dictCode="XM_LXQF">
+			<entity dictName="公司使用" type="LB" dictIndex="4" selected="false"/>
+			<entity dictName="自主研发" type="LB" dictIndex="3" selected="false"/>
+			<entity dictName="合同项目" type="LB" dictIndex="2" selected="false"/>
+			<entity dictName="提案" type="LB" dictIndex="1" selected="false"/>
+		</entity>
+		
+	</entity>
+	<entity class="DictEntity" exist="0" parent="dict" method="dictService.init" dictName="系统管理" type="SZX"/>
+	
+	<!-- 角色数据 -->
+	<entity class="RoleEntity" exist="0" parent="" method="roleService.init" name="超级管理员" sn="ADMIN" defaultRole="1"/>
+	<entity class="RoleEntity" exist="0" parent="" method="roleService.init" name="管理员" sn="MANAGER" defaultRole="0"/>
+	<entity class="RoleEntity" exist="0" parent="" method="roleService.init" name="普通用户" sn="GUEST" defaultRole="0"/>
+	
+</init>

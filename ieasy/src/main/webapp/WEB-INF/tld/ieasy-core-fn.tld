@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+
+	<description>ieasy核心函数库</description>
+	<display-name>自定义函数库</display-name>
+	<tlib-version>1.0</tlib-version>
+	<short-name>icf</short-name>
+	<uri>/ieasy-core-fun</uri>
+
+	<function>
+		<description>验证是否有权限资源，如果有则显示功能按钮，没有则不显示</description>
+		<name>hasPermit</name>
+		<function-class>com.ieasy.module.system.util.tag.functions.IEasyCoreFun</function-class>
+		<function-signature>boolean hasPermit(java.lang.String)</function-signature>
+	</function>
+
+</taglib>

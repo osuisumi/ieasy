@@ -1,0 +1,3 @@
+﻿[
+    { "id": "0", "text": "百度一下", "iconCls": "icon-hamburg-docs", "attributes": { "href": "http://www.baidu.com", "iniframe": true, "closable": true, "refreshable": true, "selected": true } }
+]

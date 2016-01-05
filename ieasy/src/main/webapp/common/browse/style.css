@@ -1,0 +1,35 @@
+﻿html,body{
+	height:100%;
+	padding:0;
+	margin:0;
+}
+body {
+	background:#fff;
+	font-family:宋体;
+}
+p {
+	font-family:黑体;
+	letter-spacing:1px;
+	color:#999;
+	font-size:20px;
+}
+img {
+	border:none;
+}
+#aac{
+	padding-top:100px;
+	width:750px;
+	text-align:center;
+	margin:0 auto;
+	display: table;
+}
+#aac table{
+	width:100%;
+}
+a {
+	color:#06f;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}

@@ -1,0 +1,57 @@
+get方法乱码解决方法将tomcat中conf目录下server.xml文件中加入
+<Connector port="8080" maxHttpHeaderSize="8192"  
+               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"  
+               enableLookups="false" redirectPort="8443" acceptCount="100"  
+               connectionTimeout="20000" disableUploadTimeout="true" URIEncoding="UTF-8" />
+
+
+针对于tomcat可以通过修改配置获得gzip支持
+<Connector   
+              port="8080"   
+              protocol="HTTP/1.1"  
+              connectionTimeout="20000"  
+              redirectPort="443"   
+              URIEncoding="UTF-8"  
+              compression="on"     
+              noCompressionUserAgents="gozilla, traviata"     
+              compressableMimeType="text/html,text/xml,text/javascript,text/css,text/plain,application/json"   
+	/> 
+	
+compression="on"   开启压缩支持 
+noCompressionUserAgents="gozilla, traviata"   不压缩的内容 
+compressableMimeType="text/html,text/xml,text/javascript,text/css,text/plain,application/json" 压缩的类型 
+
+
+
+复制项目表数据
+INSERT INTO ieasy_oa_project_center
+(
+	id, proj_num, proj_name, proj_start_time, proj_end_time, proj_status,
+	
+	proj_quot, proj_shouzhu, proj_zyfw, proj_gm, proj_buglv, proj_bjzry, proj_yjtrzry, 
+	proj_bjscx, proj_clrl, proj_cclrl, proj_ydscx, proj_htpjzt, proj_cwjszt, proj_cwydwcjssj, proj_gjjb, proj_xmjsnf, proj_cwwcjssj, proj_jxzt
+	
+) 
+SELECT 
+	id, projectNum, name, startDate, endDate, 
+	case status 
+			WHEN 1 THEN 2
+			WHEN 2 THEN 3
+			WHEN 3 THEN 4
+			ELSE 0 END,
+	quot, shouzhu, taskScope, project_gm, project_buglv, project_bjzry, project_yjtrzry, project_bjscx,
+	project_clrl, project_cclrl, project_ydscx, xmpjzt, jiesuan, cwydwcjssj, gjjb, xmjsnf, cwwcjssj, jxzt
+
+	
+FROM infos.infox_project_project i WHERE `status`<>5 ;
+
+update ieasy_oa_project_center set 
+	proj_budget_amount1=0,
+	proj_budget_amount2=0,
+	proj_budget_amount3=0,
+	proj_budget_amount4=0,
+	proj_budget_amount5=0,
+	proj_budget_amount6=0,
+	proj_budget_amount7=0,
+	proj_budget_amount8=0,
+	proj_budget_amount9=0 ;
